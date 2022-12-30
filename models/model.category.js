@@ -9,4 +9,5 @@ const categorySchema = new Schema(
 	},
 	{ timestamps: true }
 )
+categorySchema.index({ description: 1 })
 module.exports = model('Category', categorySchema)

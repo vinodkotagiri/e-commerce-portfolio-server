@@ -21,6 +21,7 @@ const orderSchema = new Schema(
 			createTime: { type: String },
 			amount: { type: Number },
 		},
+		paymentMethod: { type: String, required: true },
 		isPaid: {
 			type: Boolean,
 			default: false,
