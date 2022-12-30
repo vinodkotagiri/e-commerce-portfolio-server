@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 function isLoggedIn(req, res, next) {
 	try {
-		const token = req.cookies.acces_token
+		const token = req.cookies.access_token
 		if (!token) return res.status(403).json({ error: 'Access token is required!' })
 		try {
 			const decoded = token && jwt.verify(token, process.env.JWT_SECRET)
@@ -23,3 +23,4 @@ function isAdmin(req, res, next) {
 		res.status(500).json({ error: 'Something went wrong! \n' + error.message })
 	}
 }
+module.exports = { isLoggedIn, isAdmin }

@@ -4,7 +4,7 @@ const categorySchema = new Schema(
 	{
 		name: { type: String, required: true, trim: true, unique: true, lowercase: true },
 		description: { type: String, default: 'Default category description' },
-		image: { type: String, required: true },
+		image: { type: String, default: '' },
 		attrs: [{ key: { type: String }, value: [{ type: String }] }],
 	},
 	{ timestamps: true }
